@@ -1,12 +1,9 @@
 package com.tadi.dto.user;
 
-import com.tadi.dto.BaseResponseModel;
-import lombok.Builder;
 import lombok.Data;
 
 @Data
-@Builder
-public class UserResponse extends BaseResponseModel {
+public class UserResponse {
 
     private String username;
     private String email;

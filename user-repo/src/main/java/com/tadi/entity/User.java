@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name="USERS")
+@Table(name="users")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter

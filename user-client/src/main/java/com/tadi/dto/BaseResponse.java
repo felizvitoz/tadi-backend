@@ -1,7 +1,6 @@
 package com.tadi.dto;
 
-public class BaseResponseModel {
-
+public class BaseResponse {
     private String errorCode;
     private String errorMessage;
 }
