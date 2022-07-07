@@ -23,8 +23,8 @@ public class UserController {
     @PostMapping
     public BaseSingleResponse<Boolean> createUser(@RequestBody CreateUserRequest createUserRequest) throws Exception {
         try {
-            boolean isSuccess = userService.create(createUserRequest);
-            return BaseSingleResponse.<Boolean>builder().content(isSuccess).build();
+            boolean success = userService.create(createUserRequest);
+            return BaseSingleResponse.<Boolean>builder().content(success).build();
         } catch (Exception ex) {
             // do not logging password
             log.error(ex.getMessage());

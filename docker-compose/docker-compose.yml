@@ -35,6 +35,8 @@ services:
       - C:\Users\62815\Documents\postgresql-data:/var/lib/postgresql
     ports:
       - 5440:5432
+    networks:
+      - local_network
 
 networks:
   local_network:

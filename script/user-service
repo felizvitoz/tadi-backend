@@ -1,0 +1,52 @@
+=======================================================================
+DB
+=======================================================================
+
+CREATE DATABASE "redemption_apps";
+
+CREATE USER redemption_user WITH ENCRYPTED PASSWORD 'Password123$';
+
+grant all privileges on database redemption_apps to redemption_user;
+
+CREATE TABLE users (
+	username VARCHAR ( 50 ) PRIMARY KEY,
+	password VARCHAR ( 50 ) NOT NULL,
+	email VARCHAR ( 255 ) UNIQUE NOT NULL,
+	created_on TIMESTAMP NOT NULL,
+	created_by char ( 50 ) NOT NULL,
+	updated_on TIMESTAMP NOT NULL,
+	updated_by char ( 50 ) NOT NULL
+);
+
+CREATE INDEX ON users (email);
+
+CREATE TABLE users (
+	username VARCHAR ( 50 ) PRIMARY KEY,
+	password VARCHAR ( 50 ) NOT NULL,
+	email VARCHAR ( 255 ) UNIQUE NOT NULL,
+	created_on TIMESTAMP NOT NULL,
+	created_by char ( 50 ) NOT NULL,
+	updated_on TIMESTAMP NOT NULL,
+	updated_by char ( 50 ) NOT NULL
+);
+
+CREATE INDEX ON users (email);
+
+psql -h localhost -p 5440 -U postgres
+
+===================================================================================
+Run Command
+===================================================================================
+docker build -t redemption-app/user-service . --build-arg ACTIVE_PROFILE=dev
+docker build -t redemption-app/config .
+
+
+docker run -d --name redemption-config --network local-network --publish 8889:8889 redemption-app/config
+docker run -d --name redemption-user-service --network local-network --publish 8089:8089 redemption-app/user-service
+
+
+====================================================================================
+Kafka
+====================================================================================
+
+kafka-topics.sh --bootstrap-server localhost:29092 --create --topic REDEMPTION.APP.ACTIVITY --partitions 3
