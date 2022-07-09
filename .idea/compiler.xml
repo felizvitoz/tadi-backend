@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="user-client" />
         <module name="user-service" />
+        <module name="reward-core" />
         <module name="reward-service" />
         <module name="user-repo" />
       </profile>
@@ -22,6 +23,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="reward-core" options="-parameters" />
       <module name="reward-service" options="-parameters" />
       <module name="user-client" options="-parameters" />
       <module name="user-repo" options="-parameters" />

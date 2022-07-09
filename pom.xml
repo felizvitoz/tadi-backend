@@ -13,6 +13,7 @@
         <module>user-service</module>
         <module>user-repo</module>
         <module>reward-service</module>
+        <module>reward-core</module>
     </modules>
 
     <parent>
