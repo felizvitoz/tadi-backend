@@ -1,4 +1,4 @@
-package com.tadi.user.service;
+package com.tadi.reward.service;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
